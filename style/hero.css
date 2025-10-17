@@ -7,7 +7,7 @@
   /* Full screen hero section */
   width: 100%;
   min-height: 100dvh;
-  background: #0033a0;
+  background: #1a531ac7;
   color: white;
   font-family: Futura;
   font-weight: bold;
@@ -17,7 +17,7 @@
 .hero a {
   color: white;
   text-decoration: underline;
-  text-decoration-color: #c6093b;
+  text-decoration-color: #000000;
 }
 
 /* A little "activation" to demonstrate JS is working in the template */
@@ -25,7 +25,7 @@
   transition: background 0.5s;
 }
 .hero.active {
-  background: #c6093b;
+  background: #c6093b00;
 }
 .hero.active a {
   color: white;
@@ -42,4 +42,8 @@
   .hero {
     font-size: 75px;
   }
+}
+
+.hero h4{
+font-size: 100px;
 }
