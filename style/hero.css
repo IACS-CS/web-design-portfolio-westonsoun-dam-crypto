@@ -2,35 +2,79 @@
   margin-block-start: 0;
   margin-block-end: 0;
 }
+/* Updated hero layout and styling (generated with help from Github Copilot - 01/12/2026) */
 .hero {
   box-sizing: border-box;
   /* Full screen hero section */
   width: 100%;
   min-height: 100dvh;
-  background: #1a531ac7;
-  color: white;
-  font-family: Futura;
-  font-weight: bold;
-  font-size: 30px;
+  background: var(--color-ebony);
+  color: var(--color-white);
+  font-family: "Titillium Web", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  /* center title & Learn More vertically and horizontally */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 1.5rem;
   text-align: center;
+  transition: background 0.5s, transform 420ms ease, opacity 420ms ease;
 }
+
+/* responsive title sizing */
+.hero h1 {
+  margin: 0;
+  font-size: clamp(28px, 6vw, 72px);
+  line-height: 1;
+}
+
+/* Make Learn More look like a centered button */
+.hero a#hero-learn-more {
+  display: inline-block;
+  background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+  color: var(--color-white);
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.08);
+  text-decoration: none;
+  font-weight: 600;
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+.hero a#hero-learn-more:focus,
+.hero a#hero-learn-more:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+}
+
+/* Pinned state: hero is fixed and prevents page scroll until user continues */
+.hero.hero--pinned {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  /* Make the pinned hero fully opaque so content underneath is not visible */
+  background: var(--color-ebony); /* solid color (no alpha) */
+  color: var(--color-white);
+  /* ensure it covers everything and prevents pointer events to below content */
+  pointer-events: auto;
+}
+
+/* Prevent main document scrolling while hero is pinned */
+body.no-scroll {
+  height: 100dvh;
+  overflow: hidden;
+}
+
 .hero a {
-  color: white;
+  color: var(--color-white);
   text-decoration: underline;
-  text-decoration-color: #000000;
+  text-decoration-color: rgba(0, 0, 0, 0.25);
 }
 
 /* A little "activation" to demonstrate JS is working in the template */
-.hero {
-  transition: background 0.5s;
-}
-.hero.active {
-  background: #c6093b00;
-}
-.hero.active a {
-  color: white;
-  text-decoration-color: #0033a0;
-}
+/* hero.active removed — not used. Keep hero appearance consistent with theme */
 
 @media (max-width: 800px) {
   .hero {
@@ -44,6 +88,6 @@
   }
 }
 
-.hero h4{
-font-size: 100px;
+.hero h4 {
+  font-size: 100px;
 }

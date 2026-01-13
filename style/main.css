@@ -5,6 +5,15 @@ html {
   scroll-behavior: smooth;
 }
 
+/* This block was generated with help from Github Copilot: theme variables and base colors - 01/12/2026 */
+:root {
+  --color-ebony: #2f362f; /* Ebony - dark */
+  --color-white: #f8faf9; /* White - UI surfaces */
+  --color-cream: #f6efe6; /* Cream - page background */
+  --color-sand: #d9d3c6; /* Sand Dollar - card / subtle background */
+  --color-celadon: #788978; /* Celadon - accent */
+}
+
 body {
   /* Change to something you like, but please do customize the font! */
   font-family: Roboto, "Helvetica Neue", sans-serif;
@@ -13,15 +22,37 @@ body {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  /* Customize colors! */
-  background: #f0f0f0;
-  color: #333;
+  /* Apply theme colors */
+  background: var(--color-cream);
+  color: var(--color-ebony);
 }
+
+/* This class was generated with help from Github Copilot: replace site font with Titillium Web semibold - 01/13/2026 */
+.titillium-web-semibold {
+  font-family: "Titillium Web", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+} 
+
 h2 {
-  color: #ffffff;
+  color: var(--color-ebony);
   text-decoration: underline;
-  text-decoration-color: #ffffff;
+  text-decoration-color: color-mix(
+    in srgb,
+    var(--color-ebony) 30%,
+    transparent
+  );
   margin-bottom: 8px;
+}
+
+/* Global link color for theme */
+a {
+  color: var(--color-celadon);
+}
+a:focus {
+  outline: 3px solid
+    color-mix(in srgb, var(--color-celadon) 35%, var(--color-white));
+  outline-offset: 3px;
 }
 p {
   margin-top: 0;
@@ -34,4 +65,244 @@ main {
   line-height: 1.8; /* choose a line spacing */
   font-size: 18px; /* choose a font size */
   margin: 0 auto; /* center the content */
+}
+
+/* GitHub projects carousel styles (generated with help from Github Copilot)
+   - shows compact card slides and a simple carousel UI */
+.github-projects {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+.github-projects h2 {
+  margin-bottom: 0.5rem;
+}
+
+/* Make the heading link look like plain heading text but keep it keyboard accessible */
+.github-projects h2 a {
+  color: inherit;
+  text-decoration: none;
+  font-weight: inherit;
+}
+.github-projects h2 a:hover,
+.github-projects h2 a:focus {
+  text-decoration: underline;
+  outline: none;
+}
+.github-footnote {
+  margin-top: 0.5rem;
+  color: color-mix(in srgb, var(--color-ebony) 70%, transparent);
+  font-size: 0.95rem;
+}
+.carousel {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 8px;
+}
+.carousel-track {
+  overflow: hidden;
+  width: 100%;
+}
+.carousel-track .slide-container {
+  display: flex;
+  /* smoother, slightly slower transition for a subtle effect */
+  transition: transform 420ms cubic-bezier(0.22, 0.9, 0.46, 1);
+  /* use gap instead of slide margins for consistent sizing */
+  gap: 12px;
+  padding: 0 6px; /* keep some breathing room inside the track */
+  align-items: stretch;
+  will-change: transform;
+}
+.slide {
+  /* slides fill the track width exactly (controlled by JS) */
+  min-width: 260px;
+  max-width: 100%;
+  margin: 0; /* remove margins — handled by gap on container */
+  /* Use theme: cream to sand gradient for slide cards */
+  background: linear-gradient(180deg, var(--color-cream), var(--color-sand));
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 6px 18px rgba(47, 54, 47, 0.06);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  box-sizing: border-box;
+  overflow: hidden; /* prevent inner overflow */
+  word-break: break-word;
+  /* subtle depth effect */
+  transform: scale(0.996);
+  opacity: 0.985;
+  transition: transform 420ms cubic-bezier(0.22, 0.9, 0.46, 1),
+    opacity 220ms ease;
+  transform-origin: center center;
+}
+.slide.active {
+  transform: scale(1);
+  opacity: 1;
+}
+
+/* Ensure links, text and images inside slides wrap and do not overflow */
+.slide a.repo-link {
+  display: block;
+  color: var(--color-celadon);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.05rem;
+  overflow-wrap: anywhere;
+}
+.slide p.description {
+  margin: 0;
+  color: color-mix(in srgb, var(--color-ebony) 85%, transparent);
+  overflow-wrap: anywhere;
+}
+.slide img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+.slide a.repo-link {
+  color: var(--color-celadon);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.05rem;
+}
+.slide p.description {
+  margin: 0;
+  color: color-mix(in srgb, var(--color-ebony) 85%, transparent);
+}
+.slide .meta {
+  font-size: 0.85rem;
+  color: color-mix(in srgb, var(--color-ebony) 60%, transparent);
+}
+.carousel-btn {
+  border: none;
+  background: transparent;
+  font-size: 28px;
+  cursor: pointer;
+  padding: 0.25rem 0.6rem;
+  color: var(--color-ebony);
+}
+.carousel-btn:focus {
+  outline: 3px solid rgba(120, 137, 120, 0.25);
+  outline-offset: 4px;
+}
+.carousel-indicators {
+  margin-top: 0.7rem;
+  display: flex;
+  gap: 6px;
+  justify-content: center;
+}
+.carousel-indicators button {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: none;
+  background: color-mix(in srgb, var(--color-ebony) 12%, var(--color-white));
+  cursor: pointer;
+}
+.carousel-indicators button.active {
+  background: var(--color-celadon);
+}
+@media (max-width: 640px) {
+  .slide {
+    min-width: 220px;
+    padding: 0.8rem;
+  }
+  .carousel-btn {
+    font-size: 22px;
+  }
+}
+
+/* Preview button (inline on slides) */
+.preview-btn {
+  margin-top: 0.5rem;
+  align-self: flex-start;
+  background: var(--color-celadon);
+  color: var(--color-white);
+  border: none;
+  padding: 0.4rem 0.7rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+}
+.preview-btn:focus {
+  outline: 3px solid rgba(120, 137, 120, 0.25);
+  outline-offset: 3px;
+}
+
+/* Project preview modal */
+.project-preview {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+.project-preview[hidden] {
+  display: none;
+}
+.preview-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+.preview-dialog {
+  position: relative;
+  background: var(--color-white);
+  width: min(95%, 900px);
+  max-height: 90vh;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 12px 40px rgba(47, 54, 47, 0.18);
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+}
+.preview-close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  z-index: 2;
+  border: none;
+  background: transparent;
+  color: var(--color-ebony);
+  font-size: 20px;
+  cursor: pointer;
+  padding: 6px;
+}
+.preview-content {
+  padding: 3.5rem 1rem 1rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  height: 100%;
+}
+.preview-iframe {
+  width: 100%;
+  height: 60vh;
+  border: none;
+  background: var(--color-white);
+}
+.preview-fallback {
+  margin: 0;
+  font-size: 0.95rem;
+  color: color-mix(in srgb, var(--color-ebony) 70%, transparent);
+  text-align: center;
+}
+.preview-open-new {
+  color: var(--color-celadon);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+@media (max-width: 640px) {
+  .preview-iframe {
+    height: 50vh;
+  }
+  .preview-dialog {
+    width: 98%;
+  }
 }

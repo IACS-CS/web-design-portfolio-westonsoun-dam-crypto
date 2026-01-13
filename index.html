@@ -2,61 +2,211 @@
 <html>
   <head>
     <title>Wes Web Design Portfolio</title>
+    <!-- This link was added with help from Github Copilot: load Titillium Web font - 01/13/2026 -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200;300;400;600;700&display=swap">
     <link rel="stylesheet" href="./style/hero.css" />
     <link rel="stylesheet" href="./style/main.css" />
   </head>
-  <body>
+  <body class="titillium-web-semibold">
     <!-- Demo content -->
     <section class="hero">
-      <h1>Wes Web Design Portfolio</h1>
-      <a href="#about-me">Learn More</a>
+      <!-- Updated title and layout (generated with help from Github Copilot - 01/12/2026) -->
+      <h1>Wes Portfolio</h1>
+      <a id="hero-learn-more" href="#about-me">Learn More</a>
     </section>
     <main>
       <section class="info" id="about-me">
         <div class="about-me">
-        <h2><a href="About Me.html">About Me</a></h2>
+          <h2><a href="About Me.html">About Me</a></h2>
           <p>
-            I am a senior in highschool who is interested
-            in sketching, creating, and designing random things.
+            I am a senior in highschool who is interested in sketching,
+            creating, and designing random things.
           </p>
         </div>
+      
+       
       </section>
-      <section id="cyoa">
-        <h2><a href="Cyoa.html">My Choose Your Own Adventure Project</a></h2>
-        <p>
-          This project consisted of choosing a small problem with many 
-          solutions to create a story that would lead to us testing our 
-          skills in opening new webpages and more.
+      <!-- GitHub projects carousel: shows repo name and webpage for user westonsoun-dam-crypto -->
+      <!-- Static-only carousel (no dynamic fetches) — added with help from Github Copilot - 01/12/2026 -->
+      <section
+        id="github-projects"
+        class="github-projects"
+        data-static-only="true"
+      >
+        <!-- This change was generated with help from Github Copilot: make the heading open the Projects page in a new tab - 01/12/2026 -->
+        <h2><a id="projects-open-blank" href="projects.html" target="_blank" rel="noopener">Projects on GitHub</a></h2>
+
+        <div class="carousel" aria-roledescription="carousel">
+          <button class="carousel-btn prev" aria-label="Previous project">
+            ‹
+          </button>
+
+          <div class="carousel-track" aria-live="polite">
+            <div class="slide placeholder">
+              Loading projects… If you don't see projects,
+              <a
+                href="https://github.com/IACS-CS/web-design-portfolio-westonsoun-dam-crypto"
+                target="_blank"
+                rel="noopener"
+                >view them on GitHub</a
+              >.
+            </div>
+
+            <!-- Static project slides (add more by copying this block) -->
+            <!-- This HTML was generated with help from Github Copilot: add static slide - 01/12/2026 -->
+            <div class="slide static">
+              <a
+                class="repo-link"
+                href="https://iacs-cs.github.io/choose-your-own-adventure-westonsoun-dam-crypto"
+                target="_blank"
+                rel="noopener"
+                >Choose Your Own Adventure</a
+              >
+              <p class="description">
+                Hosted GitHub Pages site for the Choose Your Own Adventure
+                project.
+              </p>
+              <div class="meta">Live demo</div>
+              <button class="preview-btn" aria-label="Preview project">
+                Preview
+              </button>
+            </div>
+
+            <!-- This HTML was generated with help from Github Copilot: add static slide for business-card-project-kell-and-wes - 01/12/2026 -->
+            <div class="slide static">
+              <a
+                class="repo-link"
+                href="https://verbose-guide-v67jrgw6q94p2wxv-8080.app.github.dev/"
+                target="_blank"
+                rel="noopener"
+                >Business Card Project — Kell &amp; Wes</a
+              >
+              <p class="description">
+                Live demo: Business Card Project — Kell &amp; Wes (hosted on
+                GitHub Codespaces preview).
+              </p>
+              <div class="meta">Live demo</div>
+              <button class="preview-btn" aria-label="Preview project">
+                Preview
+              </button>
+            </div>
+
+            <!-- This HTML was generated with help from Github Copilot: add static slide for css-zen-garden-westonsoun-dam-crypto - 01/12/2026 -->
+            <div class="slide static">
+              <a
+                class="repo-link"
+                href="https://organic-fishstick-x5qgp9x5v77vf6r79-3000.app.github.dev/"
+                target="_blank"
+                rel="noopener"
+                >CSS Zen Garden — Weston</a
+              >
+              <p class="description">
+                Live demo: CSS Zen Garden adaptation showcasing responsive
+                design and CSS techniques.
+              </p>
+              <div class="meta">Live demo</div>
+              <button class="preview-btn" aria-label="Preview project">
+                Preview
+              </button>
+            </div>
+
+            <!-- This HTML was generated with help from Github Copilot: add static slide for interactive-design-weston - 01/12/2026 -->
+            <div class="slide static">
+              <a
+                class="repo-link"
+                href="https://super-tribble-697x5rw94jv5h69j-8080.app.github.dev/"
+                target="_blank"
+                rel="noopener"
+                >Interactive Design — Kell &amp; Wes</a
+              >
+              <p class="description">
+                Live demo: Interactive design exercises and demos showcasing
+                JS-driven interactions and animations.
+              </p>
+              <div class="meta">Live demo</div>
+              <button class="preview-btn" aria-label="Preview project">
+                Preview
+              </button>
+            </div>
+          </div>
+
+          <button class="carousel-btn next" aria-label="Next project">›</button>
+
+          <!-- Retry button (hidden until error occurs) -->
+          <button
+            id="github-retry"
+            class="carousel-retry"
+            hidden
+            aria-label="Retry loading projects"
+          >
+            Retry
+          </button>
+
+          <div
+            class="carousel-indicators"
+            role="tablist"
+            aria-hidden="false"
+          ></div>
+        </div>
+
+        <p class="github-footnote">
+          Showing:
+          <a
+            href="https://iacs-cs.github.io/choose-your-own-adventure-westonsoun-dam-crypto"
+            target="_blank"
+            rel="noopener"
+            >Live demo — choose-your-own-adventure</a
+          >. Click the card to open the live site.
         </p>
       </section>
-      <section id="bc">
-        <h2><a href="BCP.html">Buisness Card Project</a></h2>
-        <p>
-          During this project we had to create a business card 
-          about a fake business. I actually had a busniness
-          idea from a social account I had made in the past
-          so I based my card off of that. 
-        </p>
-        <p>IACS-CS/iacs-web-design-fall-25-26-business-card-project-business-card-project
-          
-        </p>
-      </section>
+
+      <!-- Moved: Sources & Attribution (bottom of page) -->
       <section id="attribution">
         <h2><a href="SA.html">Sources &amp; Attribution</a></h2>
-        <p>
-          Fix me... you can add a list of sources you used to create your
-          portfolio here. Be sure to acknowledge any images, fonts, or other
-          media you used that you did not create yourself.
-        </p>
-        <p>
-          In addition, remember if you use AI to help (including Copilot), you
-          must acknowledge it here with a description of how you used AI &mdash;
-          you can list tasks AI helped you with, and you should also include
-          notes <em>in your source code</em> describing any AI-generated code.
-        </p>
+        <!-- This content was generated with help from Github Copilot: AI-assisted changes log - 01/13/2026 -->
+        <p>The following edits were made with AI assistance (Copilot):</p>
+        <ul>
+          <li>Added Google Fonts import for "Titillium Web" to pages: <code>index.html</code>, <code>projects.html</code>, <code>BCP.html</code>, <code>Cyoa.html</code>, <code>About Me.html</code>, <code>SA.html</code>.</li>
+          <li>Added CSS helper class <code>.titillium-web-semibold</code> to <code>style/main.css</code> (font-family: "Titillium Web", font-weight: 600).</li>
+          <li>Updated <code>.hero</code> styles in <code>style/hero.css</code> to use "Titillium Web" at semibold weight (600).</li>
+          <li>Replaced earlier extra-light helper class and applied the semibold class to the <code>&lt;body&gt;</code> element on all pages.</li>
+          <li>Added inline comments in modified files noting AI assistance and the date of the changes.</li>
+        </ul>
+        <p>For details and file-level comments, see the modified source files in the repository.</p>
       </section>
+
     </main>
   </body>
+  <!-- Project preview modal (iframe + fallback) -->
+  <!-- This HTML snippet was generated with help from Github Copilot: project preview modal - 01/12/2026 -->
+  <div id="project-preview" class="project-preview" hidden aria-hidden="true">
+    <div class="preview-backdrop" data-close="true"></div>
+    <div
+      class="preview-dialog"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Project preview"
+    >
+      <button class="preview-close" aria-label="Close preview">✕</button>
+      <div class="preview-content">
+        <iframe
+          class="preview-iframe"
+          src=""
+          title="Project preview"
+          frameborder="0"
+          sandbox="allow-forms allow-scripts allow-same-origin"
+        ></iframe>
+        <p class="preview-fallback">
+          If the preview doesn't load,
+          <a class="preview-open-new" href="#" target="_blank" rel="noopener"
+            >open in a new tab</a
+          >.
+        </p>
+      </div>
+    </div>
+  </div>
+
   <!-- Keep the script files at the bottom of your file -->
+  <script src="scripts/github-carousel.js"></script>
   <script src="scripts/main.js"></script>
 </html>
