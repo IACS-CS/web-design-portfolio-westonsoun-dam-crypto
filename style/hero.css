@@ -34,11 +34,15 @@
 /* Make Learn More look like a centered button */
 .hero a#hero-learn-more {
   display: inline-block;
-  background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.06),
+    rgba(255, 255, 255, 0.02)
+  );
   color: var(--color-white);
   padding: 0.5rem 1rem;
   border-radius: 8px;
-  border: 1px solid rgba(255,255,255,0.08);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   text-decoration: none;
   font-weight: 600;
   transition: transform 180ms ease, box-shadow 180ms ease;
@@ -46,7 +50,7 @@
 .hero a#hero-learn-more:focus,
 .hero a#hero-learn-more:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
 }
 
 /* Pinned state: hero is fixed and prevents page scroll until user continues */
